@@ -24,5 +24,30 @@ function addTask(e){
         alert('Add a Task');
     }
 
+    // Create li Element
+    const li = document.createElement('li');
+
+    // Add class to li element
+    li.className = 'collection-item';
+
+    // Create text node and append to li
+    li.appendChild(document.createTextNode(taskInput.value));
+
+    // Create new link element
+    const link = document.createElement('a');
+
+    // Add class to link element
+    link.className = 'delete-item secondary-content';
+
+    // add icon html
+    link.innerHTML = '<i class="fa fa-remove"></i>';
+
+    // Append the link to li
+    li.appendChild(link);
+
+    // Append li to ul
+    taskList.appendChild(li);
+
+
     e.preventDefault();
 }

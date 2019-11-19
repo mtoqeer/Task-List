@@ -24,7 +24,7 @@ function loadEventListeners(){
     // Filter Tasks
     filter.addEventListener('keyup', filterTasks);
 }
-
+// Filter Tasks
 function filterTasks(e){
     const text = e.target.value.toLowerCase();
     document.querySelectorAll('.collection-item').forEach
@@ -68,11 +68,30 @@ function addTask(e){
      // Append li to ul
      taskList.appendChild(li);
         
+    //  Save Tasks to Local Storage
+     storeTaskInLocalStorage(taskInput.value);
+
      taskInput.value = '';
  
      e.preventDefault();
     } 
 }
+
+// Save Task To Local Storage
+function storeTaskInLocalStorage(task){
+    let tasks;
+    if(localStorage.getItem('tasks') === null){
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+
+    tasks.push(task);
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+
 // Delete Task
 function removeTask(e){
     if(e.target.parentElement.classList.contains('delete-item')){

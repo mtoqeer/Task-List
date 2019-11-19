@@ -167,4 +167,10 @@ function removeTaskFromLocalStorage(taskItem){
 // Cler Tasks Funciton
 function clearTasks(){
     taskList.innerHTML = '';
+
+    clearTasksFromLocalStorage();
+}
+
+function clearTasksFromLocalStorage(){
+    localStorage.clear();
 }

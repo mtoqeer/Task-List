@@ -60,7 +60,10 @@ function addTask(e){
 // Delete Task
 function removeTask(e){
     if(e.target.parentElement.classList.contains('delete-item')){
-        e.target.parentElement.parentElement.remove();
+        if(confirm('Are you sure?')){
+            e.target.parentElement.parentElement.remove();
+        };
+        
     }
 
 }

@@ -20,10 +20,6 @@ function loadEventListeners(){
 }
 
 
-
-
-
-
 // Add Task
 function addTask(e){
 
@@ -55,6 +51,7 @@ function addTask(e){
     // Append li to ul
     taskList.appendChild(li);
 
+    taskInput.value = '';
 
     e.preventDefault();
 }

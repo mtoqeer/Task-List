@@ -17,9 +17,10 @@ function loadEventListeners(){
 
     // Delete Task Event
     taskList.addEventListener('click', removeTask);
+
+    // Clear All Tasks
+    clearBtn.addEventListener('click', clearTasks);
 }
-
-
 // Add Task
 function addTask(e){
 
@@ -49,23 +50,21 @@ function addTask(e){
  
      // Append li to ul
      taskList.appendChild(li);
- 
+        
      taskInput.value = '';
  
      e.preventDefault();
-    }
-
-   
+    } 
 }
-
-
 // Delete Task
 function removeTask(e){
     if(e.target.parentElement.classList.contains('delete-item')){
         if(confirm('Are you sure?')){
             e.target.parentElement.parentElement.remove();
         };
-        
     }
-
+}
+// Cler Tasks Funciton
+function clearTasks(){
+    taskList.innerHTML = '';
 }

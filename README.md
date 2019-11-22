@@ -1,4 +1,4 @@
-# Tasks List Manager
+# Tasks List Manager Project For JavaScript Beginners 
 
 In Pure Vanila JavaScript
 
